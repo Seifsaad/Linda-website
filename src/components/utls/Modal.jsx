@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from "@emailjs/browser";
-import { quoteFormSchema } from "./quoteFormSchema";
+import { quoteFormSchema } from "./Quoteformschema";
 
 // TODO: replace with your own EmailJS credentials (from emailjs.com dashboard)
 const EMAILJS_SERVICE_ID = "service_k61i4i5";
