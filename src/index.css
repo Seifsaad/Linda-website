@@ -1,0 +1,318 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-outline-variant: #c3c6d1;
+  --color-primary-fixed-dim: #a7c8ff;
+  --color-secondary-container: #e41f25;
+  --color-surface-container-highest: #e0e3e5;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-primary: #ffffff;
+  --color-on-secondary-container: #fffbff;
+  --color-deep-steel: #003366;
+  --color-safety-yellow: #ffd700;
+  --color-surface-dim: #d8dadc;
+  --color-error: #ba1a1a;
+  --color-on-tertiary-fixed: #011e2f;
+  --color-tertiary-fixed-dim: #b0cae0;
+  --color-secondary-fixed-dim: #ffb4ab;
+  --color-machine-gray: #3a3a3a;
+  --color-tertiary-container: #1c3648;
+  --color-surface: #f8f9fb;
+  --color-surface-bright: #f8f9fb;
+  --color-industrial-red: #e31e24;
+  --color-background: #f8f9fb;
+  --color-on-primary-fixed: #001b3c;
+  --color-outline: #737780;
+  --color-on-tertiary: #ffffff;
+  --color-inverse-surface: #2d3133;
+  --color-tertiary-fixed: #cbe6fd;
+  --color-error-container: #ffdad6;
+  --color-on-tertiary-fixed-variant: #30495c;
+  --color-secondary: #bb0014;
+  --color-secondary-fixed: #ffdad6;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-primary-container: #003366;
+  --color-on-secondary-fixed: #410002;
+  --color-inverse-on-surface: #eff1f3;
+  --color-on-primary-fixed-variant: #1f477b;
+  --color-on-tertiary-container: #859fb5;
+  --color-inverse-primary: #a7c8ff;
+  --color-surface-variant: #e0e3e5;
+  --color-on-surface-variant: #43474f;
+  --color-on-secondary-fixed-variant: #93000d;
+  --color-primary-fixed: #d5e3ff;
+  --color-tertiary: #032132;
+  --color-on-surface: #191c1e;
+  --color-surface-container-high: #e6e8ea;
+  --color-primary: #001e40;
+  --color-surface-tint: #3a5f94;
+  --color-on-primary-container: #799dd6;
+  --color-on-secondary: #ffffff;
+  --color-on-background: #191c1e;
+  --color-on-error-container: #93000a;
+  --color-on-error: #ffffff;
+
+  --radius-default: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  --spacing-gutter: 24px;
+  --spacing-container-max: 1280px;
+  --spacing-margin-mobile: 16px;
+  --spacing-unit: 8px;
+  --spacing-margin-desktop: 64px;
+
+  --font-cta-label: Inter, sans-serif;
+  --font-label-technical: "JetBrains Mono", monospace;
+  --font-headline-md: "IBM Plex Sans", sans-serif;
+  --font-body-lg: Inter, sans-serif;
+  --font-headline-lg-mobile: "IBM Plex Sans", sans-serif;
+  --font-display-lg: "IBM Plex Sans", sans-serif;
+  --font-headline-lg: "IBM Plex Sans", sans-serif;
+  --font-body-md: Inter, sans-serif;
+
+  --text-cta-label: 16px;
+  --text-cta-label--line-height: 20px;
+  --text-cta-label--font-weight: 700;
+
+  --text-label-technical: 14px;
+  --text-label-technical--line-height: 20px;
+  --text-label-technical--letter-spacing: 0.05em;
+  --text-label-technical--font-weight: 500;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 32px;
+  --text-headline-md--font-weight: 600;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-body-lg--font-weight: 400;
+
+  --text-headline-lg-mobile: 28px;
+  --text-headline-lg-mobile--line-height: 36px;
+  --text-headline-lg-mobile--font-weight: 600;
+
+  --text-display-lg: 48px;
+  --text-display-lg--line-height: 56px;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-lg--font-weight: 700;
+
+  --text-headline-lg: 32px;
+  --text-headline-lg--line-height: 40px;
+  --text-headline-lg--font-weight: 600;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-body-md--font-weight: 400;
+}
+
+:root {
+  --background: #f8f9fb;
+  --deep-steel: #003366;
+  --error-container: #ffdad6;
+  --error: #ba1a1a;
+  --industrial-red: #e31e24;
+  --inverse-on-surface: #eff1f3;
+  --inverse-primary: #a7c8ff;
+  --inverse-surface: #2d3133;
+  --machine-gray: #3a3a3a;
+  --on-background: #191c1e;
+  --on-error-container: #93000a;
+  --on-error: #ffffff;
+  --on-primary-container: #799dd6;
+  --on-primary-fixed-variant: #1f477b;
+  --on-primary-fixed: #001b3c;
+  --on-primary: #ffffff;
+  --on-secondary-container: #fffbff;
+  --on-secondary-fixed-variant: #93000d;
+  --on-secondary-fixed: #410002;
+  --on-secondary: #ffffff;
+  --on-surface-variant: #43474f;
+  --on-surface: #191c1e;
+  --on-tertiary-container: #859fb5;
+  --on-tertiary-fixed-variant: #30495c;
+  --on-tertiary-fixed: #011e2f;
+  --on-tertiary: #ffffff;
+  --outline-variant: #c3c6d1;
+  --outline: #737780;
+  --primary-container: #003366;
+  --primary-fixed-dim: #a7c8ff;
+  --primary-fixed: #d5e3ff;
+  --primary: #001e40;
+  --safety-yellow: #ffd700;
+  --secondary-container: #e41f25;
+  --secondary-fixed-dim: #ffb4ab;
+  --secondary-fixed: #ffdad6;
+  --secondary: #bb0014;
+  --surface-bright: #f8f9fb;
+  --surface-container-high: #e6e8ea;
+  --surface-container-highest: #e0e3e5;
+  --surface-container-low: #f2f4f6;
+  --surface-container-lowest: #ffffff;
+  --surface-container: #eceef0;
+  --surface-dim: #d8dadc;
+  --surface-tint: #3a5f94;
+  --surface-variant: #e0e3e5;
+  --surface: #f8f9fb;
+  --tertiary-container: #1c3648;
+  --tertiary-fixed-dim: #b0cae0;
+  --tertiary-fixed: #cbe6fd;
+  --tertiary: #032132;
+
+  --body-lg: "Inter", sans-serif;
+  --body-md: "Inter", sans-serif;
+  --cta-label: "Inter", sans-serif;
+  --display-lg: "IBM Plex Sans", sans-serif;
+  --headline-lg-mobile: "IBM Plex Sans", sans-serif;
+  --headline-lg: "IBM Plex Sans", sans-serif;
+  --headline-md: "IBM Plex Sans", sans-serif;
+  --label-technical: "JetBrains Mono", monospace;
+
+  --container-max: 1280px;
+  --gutter: 24px;
+  --margin-desktop: 64px;
+  --margin-mobile: 16px;
+  --unit: 8px;
+
+  --default: 0.125rem;
+  --full: 0.75rem;
+  --lg: 0.25rem;
+  --xl: 0.5rem;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+.hero-clip {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+}
+@media (max-width: 768px) {
+  .hero-clip {
+    clip-path: none;
+  }
+}
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+.modal-overlay {
+  background-color: rgba(0, 30, 64, 0.85);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-container {
+  animation: slideUpScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpScale {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #eceef0;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #003366;
+  border-radius: 4px;
+}
+.division-card.active {
+  border-color: #e31e24;
+  background-color: #f2f4f6;
+  box-shadow: 0 0 0 1px #e31e24;
+}
+.modal-blur {
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 51, 102, 0.04);
+}
+
+.modal-enter {
+  animation: modalIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+.technical-border {
+  border: 1px solid rgba(58, 58, 58, 0.1);
+}
+.hero-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(0, 51, 102, 0.9) 0%,
+    rgba(0, 51, 102, 0.4) 100%
+  );
+}
+.bento-card {
+  transition: all 0.3s ease;
+}
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 20px rgba(0, 51, 102, 0.08);
+}
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+.bg-industrial-gradient {
+  background: linear-gradient(135deg, #001e40 0%, #003366 100%);
+}
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
