@@ -7,7 +7,7 @@ import eng3 from "../../assets/images/eng-3.png";
 export default function Engineering() {
   return (
     <main className="mt-5">
-      <section className="relative h-[640px] w-full flex items-center overflow-hidden">
+      <section className="relative md:h-[640px] h-[440px] min-h-[800px] max-h-screen w-full flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div
             className="w-full h-full bg-cover bg-center"

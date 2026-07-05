@@ -67,9 +67,44 @@ export default function Navbar() {
           <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
 
 
-          <button className="md:hidden text-deep-steel">
+          <button className="md:hidden text-deep-steel" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
             <span className="material-symbols-outlined">menu</span>
           </button>
+          <div id="drawer-navigation" class="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-neutral-primary-soft border-e border-default" tabindex="-1" aria-labelledby="drawer-navigation-label">
+            <div className="flex items-center justify-between">
+              <a href="/" className="flex items-center">
+                <img src={logo} alt="LINDA GROUP LOGO" className="h-12" />
+                <span className="text-deep-steel text-lg ml-2 font-bold">LINDA GROUP</span>
+              </a>
+            </div>
+            <ul className="mt-8">
+              <li>
+            <a href="/" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+               <span class="ms-3">Home</span>
+            </a>
+         </li>
+              <li>
+            <a href="Manufacturing" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+               <span class="ms-3">Manufacturing</span>
+            </a>
+         </li>
+              <li>
+            <a href="Engineering" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+               <span class="ms-3">Engineering</span>
+            </a>
+         </li>
+              <li>
+            <a href="global-footprint" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+               <span class="ms-3">Global Footprint</span>
+            </a>
+         </li>
+              <li>
+            <a href="about-us" class="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+               <span class="ms-3">About Us</span>
+            </a>
+         </li>
+         </ul>
+          </div>
         </div>
       </div>
     </header>
