@@ -56,11 +56,11 @@ export default function Navbar() {
             About us
           </NavLink>
         </nav>
-        <div className="flex items-center gap-6">
+        <div className="flex  items-center gap-13 md:gap-6">
           <button
             type="button"
             onClick={() => setIsOpen(true)}
-            className="hidden lg:block bg-industrial-red text-white px-6 py-3 font-cta-label text-cta-label rounded transition-transform active:scale-95 hover:opacity-90 cursor-pointer"
+            className=" lg:block bg-industrial-red text-white px-6 py-3 font-cta-label text-cta-label rounded transition-transform active:scale-95 hover:opacity-90 cursor-pointer"
           >
             Request Quote
           </button>
