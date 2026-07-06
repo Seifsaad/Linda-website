@@ -5,6 +5,7 @@ import Modal from "../utls/Modal";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <header className="fixed top-0 w-full z-50 bg-surface border-b border-machine-gray/10 shadow-sm">
       <div className="max-w-container-max mx-auto px-gutter h-20 flex justify-between items-center">
@@ -67,39 +68,34 @@ export default function Navbar() {
           <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
 
 
-          <button className="md:hidden text-deep-steel" type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation">
-            <span className="material-symbols-outlined">menu</span>
-          </button>
-          <div id="drawer-navigation" className="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-neutral-primary-soft border-e border-default" tabindex="-1" aria-labelledby="drawer-navigation-label">
-            <div className="flex items-center justify-between">
-              <a href="/" className="flex items-center">
-                <img src={logo} alt="LINDA GROUP LOGO" className="h-12" />
-                <span className="text-deep-steel text-lg ml-2 font-bold">LINDA GROUP</span>
-              </a>
-            </div>
+    <button onClick={() => setIsMenuOpen(!isMenuOpen)} type="button" className="md:hidden text-deep-steel inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base hover:bg-neutral-tertiary hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary" aria-controls="navbar-hamburger" aria-expanded={isMenuOpen}>
+        <span className="sr-only">Open main menu</span>
+        <svg className="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/></svg>
+    </button>
+    <div className={`${isMenuOpen ? "block" : "hidden"} w-full absolute top-20 left-0 z-40 flex flex-col md:flex-row md:items-center md:justify-between md:relative md:top-auto md:left-auto md:w-auto md:h-auto bg-white py-4 md:py-0`} id="navbar-hamburger">
             <ul className="mt-8"> 
               <li>
-            <NavLink to="/" className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <NavLink onClick={() => setIsMenuOpen(false)} aria-current='page' to="/" className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
                <span className="ms-3">Home</span>
             </NavLink>
          </li>
               <li>
-            <NavLink to="Manufacturing" className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <NavLink onClick={() => setIsMenuOpen(false)} to="Manufacturing" className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
                <span className="ms-3">Manufacturing</span>
             </NavLink>
          </li>
               <li>
-            <NavLink to="Engineering" className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <NavLink onClick={() => setIsMenuOpen(false)} to="Engineering" className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
                <span className="ms-3">Engineering</span>
             </NavLink>
          </li>
               <li>
-            <NavLink to="global-footprint" className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <NavLink onClick={() => setIsMenuOpen(false)} to="global-footprint" className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
                <span className="ms-3">Global Footprint</span>
             </NavLink>
          </li>
               <li>
-            <NavLink to="about-us" className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
+            <NavLink onClick={() => setIsMenuOpen(false)} to="about-us" className="flex items-center px-2 py-1.5 text-body rounded-base hover:bg-neutral-tertiary hover:text-fg-brand group">
                <span className="ms-3">About Us</span>
             </NavLink>
          </li>
