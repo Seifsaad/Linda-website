@@ -56,7 +56,7 @@ export default function Navbar() {
             About us
           </NavLink>
         </nav>
-        <div className="flex  items-center gap-13 md:gap-6">
+        <div className="flex  items-center gap-6">
           <button
             type="button"
             onClick={() => setIsOpen(true)}
